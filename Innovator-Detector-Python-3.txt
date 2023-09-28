@@ -1,0 +1,40 @@
+import random
+
+# Preguntas en un arreglo
+preguntas = [
+    "¿Estás satisfecho con tu trabajo actual?",
+    "¿Te gustaría aprender nuevas habilidades?",
+    "¿Crees que la innovación es importante en tu vida?",
+    "¿Consideras que tomas decisiones creativas regularmente?",
+    "¿Utilizas la tecnología en tu trabajo?",
+    "¿Te sientes cómodo adoptando nuevas tecnologías?",
+    "¿Tienes una mentalidad abierta hacia el cambio?",
+    "¿Estás dispuesto a asumir riesgos en tu trabajo?",
+    "¿Te gusta explorar nuevas oportunidades?",
+    "¿Sientes que puedes adaptarte a los cambios fácilmente?"
+]
+
+# Inicializamos la variable de ranking en 0
+ranking = 0
+
+# Mostramos 10 preguntas aleatorias al usuario
+for i in range(10):
+    pregunta = random.choice(preguntas)
+    respuesta = input(f"{pregunta} (¿Sí, En ocasiones o No?) ").lower()
+
+    # Evaluamos la respuesta y actualizamos el ranking
+    if respuesta == "si":
+        ranking += 2
+    elif respuesta == "en ocasiones":
+        ranking += 1
+
+# Evaluamos el ranking y proporcionamos la retroalimentación
+print(f"El resultado final de la encuesta es: {ranking}")
+if ranking <= 50:
+    print("Debes innovar")
+elif 50 < ranking <= 70:
+    print("Debes innovar, pero no con tanta urgencia")
+else:
+    print("No es necesario innovar")
+
+
